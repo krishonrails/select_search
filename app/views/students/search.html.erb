@@ -1,14 +1,14 @@
 <h1>Search<h1>
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:q, "Name:") %>
-  <%= collection_select(@var,'name',Student.all,:std_name,:std_name,{:include_blank => ''})%><br/>
+  <%= collection_select(@var,'name',Student.uniq.select('std_name'),:std_name,:std_name,{:include_blank => ''})%><br/>
   <%#= select_tag "Name", options_for_select(Student.collect{|std| std.std_name})%>
   <%= label_tag(:q, "Age:") %>
-  <%= collection_select(@var,'age',Student.all,:age,:age,{:include_blank => ''})%><br/>
+  <%= collection_select(@var,'age',Student.uniq.select('age'),:age,:age,{:include_blank => ''})%><br/>
   <%= label_tag(:q, "Standard:") %>
-  <%= collection_select(@var,'standard',Student.all,:standard,:standard,{:include_blank => ''})%><br/>
+  <%= collection_select(@var,'standard',Student.uniq.select('standard'),:standard,:standard,{:include_blank => ''})%><br/>
   <%= label_tag(:q, "Gender:") %>
-  <%= collection_select(@var,'gender',Student.all,:gender,:gender,{:include_blank => ''})%><br/>
+  <%= collection_select(@var,'gender',Student.uniq.select('gender'),:gender,:gender,{:include_blank => ''})%><br/>
   <%= submit_tag("Search") %>
 <%end%>
 

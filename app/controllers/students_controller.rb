@@ -91,12 +91,13 @@ class StudentsController < ApplicationController
 			# # where s.id=s1.id or s2.id=s1.id or s2.id=s3.id or s3.id=s1.id;"
 			# #@student=ActiveRecord::Base.connection.execute(@sql)
 			# #Student.where('std_name LIKE :name OR age =:age' ,{:name=>"%#{params[:name]}%" ,:age=>"#{params[:age]}"}) #or 'age LIKE ?' or 'gender LIKE ?' or 'standard LIKE ?'
+			  @back=search_path
 			render 'search_data'
 		end
 			#,"%#{params[:age]}%","%#{params[:gender]}%","%#{params[:standard]}%"		
 	end
 	def search_data
-             
+      
 	end
 	private
 	def user_params
