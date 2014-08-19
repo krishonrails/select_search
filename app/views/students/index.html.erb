@@ -1,0 +1,28 @@
+<h1>Students</h1>
+	<table border=1>
+	<tr>
+	<td>Name</td>
+	<td>Age</td>
+	<td>Gender</td>
+	<td>Standard</td>
+	<td>Father's Name</td>
+	<td>Mother's Name</td>
+	<td>Address</td>
+	<td>Actions</td>
+	</tr>
+	<% @student.each do |c| %>
+	<tr>
+		<td><%=c.std_name%></td>
+		<td><%=c.age%></td>
+		<td><%=c.gender%></td>
+		<td><%=c.standard%></td>
+		<td><%=c.father_name%></td>
+		<td><%=c.mother_name%></td>
+		<td><%=c.address%></td>
+		<td><%= link_to "new", new_student_path %>
+		<%= link_to "Edit", edit_student_path(c) %>
+		<%= link_to 'Destroy', c, :confirm => 'Are you sure?', :method => :delete %>
+		</td>
+	</tr>
+	<%end%>
+	</table>

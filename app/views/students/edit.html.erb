@@ -1,0 +1,7 @@
+<h1>Edit page</h2>
+    <%=flash[:success]%>
+	<%= form_for @student do |f| %>
+	<%= label_tag :std_name %>
+	<%= f.text_field :std_name %>
+	<%= f.submit %>
+	<% end %>
