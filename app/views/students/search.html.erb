@@ -1,4 +1,10 @@
 <h1>Search<h1>
+<h1>Search<h1>
+<h1>Search<h1>
+<h1>Search<h1>
+<h1>Search<h1>
+<h1>Search<h1>
+<h1>Search<h1>
 <%= form_tag("/search", method: "get") do %>
   <%= label_tag(:q, "Name:") %>
   <%= collection_select(@var,'name',Student.uniq.select('std_name'),:std_name,:std_name,{:include_blank => ''})%><br/>
