@@ -51,7 +51,7 @@ class StudentsController < ApplicationController
 			arr=var.flatten.inject(&:merge)
 			str=''
 			arr.each do |k,v|
-				unless v==""
+				unless v.blank? 
 					str= k + "=" + "'#{v}'" + " and " + str
 				end
 			end

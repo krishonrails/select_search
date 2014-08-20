@@ -1,4 +1,8 @@
-<h1>Students</h1>
+<h1>Students</h1> <%= link_to "back", @back%>
+
+<%if @student.blank?%>
+<h1>No data found</h1>
+<%else%>
 	<table border=1>
 	<tr>
 	<td>Name</td>
@@ -25,7 +29,7 @@
 		</td>
 	</tr>
 	<%end%>
-	<%= link_to "back", @back%>
+	
 	<br/>
 	</table>
-
+<%end%>
