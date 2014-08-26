@@ -1,15 +1,29 @@
+<style type="text/css">
+  .search-field{
+    height: 30px;
+  }
+  .search-field label{
+    text-transform: lowercase;
+    font-size: 20px;
+  }
+  .search-field div{
+    width: 200px;
+  }
+</style>
 <h1>Search<h1>
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:q, "Name:") %>
-  <%= collection_select(@var,'name',Student.uniq.select('std_name'),:std_name,:std_name,{:include_blank => ''})%><br/>
-  <%#= select_tag "Name", options_for_select(Student.collect{|std| std.std_name})%>
-  <%= label_tag(:q, "Age:") %>
-  <%= collection_select(@var,'age',Student.uniq.select('age').order(:age),:age,:age,{:include_blank => ''})%><br/>
-  <%= label_tag(:q, "Standard:") %>
-  <%= collection_select(@var,'standard',Student.uniq.select('standard').order(:standard),:standard,:standard,{:include_blank => ''})%><br/>
-  <%= label_tag(:q, "Gender:") %>
-  <%= collection_select(@var,'gender',Student.uniq.select('gender'),:gender,:gender,{:include_blank => ''})%><br/>
-  <%= submit_tag("Search") %>
-<%end%>
+  <%= form_tag("/search", method: "get") do %>
+<%= label_tag(:q, "Name:") %>
+    <%= collection_select(@var,'name',Student.uniq.select('std_name'),:std_name,:std_name,{:include_blank => ''})%>
+    <%#= select_tag "Name", options_for_select(Student.collect{|std| std.std_name})%>
+
+    <label><%= label_tag(:q, "Age:") %></label>
+    <%= collection_select(@var,'age',Student.uniq.select('age').order(:age),:age,:age,{:include_blank => ''})%>
+    <label><%= label_tag(:q, "Standard:") %></label>
+    <%= collection_select(@var,'standard',Student.uniq.select('standard').order(:standard),:standard,:standard,{:include_blank => ''})%>
+    <label><%= label_tag(:q, "Gender:") %></label>
+    <%= collection_select(@var,'gender',Student.uniq.select('gender'),:gender,:gender,{:include_blank => ''})%>
+    <%= submit_tag("Search") %>
+  </div>
+  <%end%>
 
 
