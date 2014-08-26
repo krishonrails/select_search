@@ -1,10 +1,21 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.1.1'
 
 # Use sqlite3 as the database for Active Record
-gem 'mysql2'
+#gem 'mysql2'
+# gem 'ruby-oci8'
+# gem "rails", "3.2.16"
+
+# Prevent loading of ruby-oci8 gem in JRuby
+platforms :ruby do
+  gem 'ruby-oci8', ">= 2.0.4"
+end
+
+# Use either latest oracle_enhanced adapter version from github
+gem 'activerecord-oracle_enhanced-adapter', '~>1.5.5', :git => 'git://github.com/rsim/oracle-enhanced.git'
+# Or use released gem version
 gem 'debugger'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -14,7 +25,6 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
