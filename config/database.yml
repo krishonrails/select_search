@@ -25,10 +25,8 @@
 #   timeout: 5000
 
 development:
-  adapter: mysql2
-  encoding: utf8
-  database: std_app
-  username: root
-  password: qazplm123
-  host: 127.0.0.1
-  port: 3306
+  adapter: nuodb
+  database: blog_development@localhost
+  username: krish
+  password: india
+  schema: krish

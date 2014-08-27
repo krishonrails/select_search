@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
 	end
 
 	def create
-		@student=Student.new(user_params)
+		@student=Student.new(params[:student])
 		if @student.save
 		flash[:success]="Successfully saved" 
 		redirect_to students_path
@@ -20,7 +20,7 @@ class StudentsController < ApplicationController
 	end
 
 	def update
-		@student=Student.find(params[:id])
+		@student=Student.find(params[:student])
 		if  @student.update_attributes(user_params)
 			flash[:success]="Successfully updated"
 			redirect_to students_path
@@ -99,8 +99,8 @@ class StudentsController < ApplicationController
 	def search_data
       
 	end
-	private
-	def user_params
-    	params.require(:student).permit(:std_name,:age,:gender,:standard,:father_name,:mother_name,:address)
-    end
+	# private
+	# def user_params
+ #    	params.require(:student).permit(:std_name,:age,:gender,:standard,:father_name,:mother_name,:address)
+ #    end
 end
